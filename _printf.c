@@ -32,9 +32,18 @@ int _printf(const char *format, ...)
 		else if (format[i] == '%')
 		{
 			i++;
-			f_ptr = get_func(&format[i]);
-			printed_length += f_ptr(args);
+			if (format[i] != 'c' && format[i] != 's' && format[i] != '%' && format[i] != 'd' && format[i] != 'i')
+				printed_length += print_nothing(format, i);
+			else
+			{
+				f_ptr = get_func(&format[i]);
+				printed_length += f_ptr(args);
+			}
 
+		}
+		else
+		{
+			_putchar(format[i]);
 		}
 	}
 	return (printed_length);
