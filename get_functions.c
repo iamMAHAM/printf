@@ -14,7 +14,7 @@ int (*get_func(const char *format))(va_list)
 		{"%", print_pct},
 		{"d", print_dec},
 		{"i", print_dec},
-		{'b', convert_binary},
+		{"b", convert_binary},
 		{NULL, NULL}
 	};
 
