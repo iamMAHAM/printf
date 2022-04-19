@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	int (*f_ptr)(va_list);
 	int i = 0, printed_length = 0, format_length = 0;
 
-	printed_length += strlen(format);
 	format_length = strlen(format);
 	va_start(args, format);
 	if ((!format) || (format[i] == '%' && !format[1]))
@@ -28,6 +27,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
+			printed_length++;
 		}
 		else if (format[i] == '%')
 		{
