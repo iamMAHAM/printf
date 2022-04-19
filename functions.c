@@ -48,3 +48,10 @@ int print_pct(va_list args)
 	(void)args;
 	return (write(1, "%", 1));
 }
+
+int print_nothing(const char *format, int i)
+{
+	_putchar(format[i - 1]);
+	_putchar(format[i]);
+	return (1);
+}
