@@ -8,7 +8,7 @@
 int (*get_func(const char *format))(va_list)
 {
 	int i;
-	func_t p[] = {
+	func_spec p[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{"%", print_pct},
@@ -17,11 +17,11 @@ int (*get_func(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (i = 0; p[i].t; i++)
+	for (i = 0; p[i].s; i++)
 	{
-		if (*format == *(p[i].t))
+		if (*format == *(p[i].s))
 		{
-			return (p[i].f);
+			return (p[i].func_ptr);
 		}
 	}
 	return (NULL);
