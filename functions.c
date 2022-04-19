@@ -1,4 +1,6 @@
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -60,4 +62,19 @@ int print_nothing(const char *format, int i)
 	_putchar(format[i - 1]);
 	_putchar(format[i]);
 	return (1);
+}
+
+int convert_binary(va_list args)
+{
+	int total = 0;
+	int tmp = va_arg(args, char *), rem, i = 1;
+
+	while (tmp != 0)
+	{
+		rem = tmp % 2;
+		tmp /= 2;
+		total += _putchar(rem);
+		i *= 10;
+	}
+	return (total);
 }
