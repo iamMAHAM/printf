@@ -49,6 +49,12 @@ int print_pct(va_list args)
 	return (write(1, "%", 1));
 }
 
+/**
+ * print_nothing - print unknow format
+ * @format: the format
+ * @i: an index for loop
+ * Return: 1
+ */
 int print_nothing(const char *format, int i)
 {
 	_putchar(format[i - 1]);
