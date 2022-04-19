@@ -33,6 +33,11 @@ Handle the following conversion specifiers:
 
 Create a man page for your function.
 
+### 3. With a face like mine, I do better in print
+
+Handle the following custom conversion specifiers:
+* b: the unsigned int argument is converted to binary
+
 ## Authors
 
 Mardochee Gneran - mardochee01
