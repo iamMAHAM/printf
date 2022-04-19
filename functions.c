@@ -64,17 +64,30 @@ int print_nothing(const char *format, int i)
 	return (1);
 }
 
+/**
+ * convert_binary - convert binary to decimal
+ * @args: the list of args
+ * @Return: the number of digit printed
+ */
 int convert_binary(va_list args)
 {
+	int i, j;
 	int total = 0;
-	int tmp = va_arg(args, char *), rem, i = 1;
+	unsigned int n;
+	unsigned int arr[33];
 
-	while (tmp != 0)
+	n = va_arg(args, unsigned int);
+	if (n < 2)
+		total += _putchar(n + '0');
+	else
 	{
-		rem = tmp % 2;
-		tmp /= 2;
-		total += _putchar(rem);
-		i *= 10;
+		for (j = 0; n > 0; j++)
+		{
+			arr[j] = n % 2;
+			n = n / 2;
+		}
+		for (i = j - 1; i >= 0; i--)
+			total += _putchar(arr[i] + '0');
 	}
 	return (total);
 }
