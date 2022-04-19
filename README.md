@@ -35,5 +35,5 @@ Create a man page for your function.
 
 ## Authors
 
-Mardochee Gneran - mardoche.gneran@gmail.com
-Abdul Maham - ...
+Mardochee Gneran - mardochee01
+Abdul Maham - iamMAHAM
