@@ -1,10 +1,15 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
-#ifndef MAIN_H
-#define MAIN_H
-
+/**
+ * struct func_spec - a structure for format specifier associated by a function
+ * @s: the string specifier
+ * @func_ptr: a pointer to func associated by s
+ */
 typedef struct func_spec
 {
 	char *s;
