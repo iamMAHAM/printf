@@ -46,6 +46,6 @@ int print_uhex(va_list args);
 /*functions2.c*/
 int print_S(va_list args);
 int hex_print(char c);
-int print_pointer(va_list p);
+int print_pointer(va_list args);
 
 #endif
