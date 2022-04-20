@@ -35,23 +35,70 @@ int print_S(va_list args)
 /**
  * hex_print - prints a char's ascii value in uppercase hex
  * @c: char to print
- *
  * Return: number of chars printed (always 2)
  */
 int hex_print(char c)
 {
-	int count;
+	int total;
 	char diff = 'A' - ':';
 	char d[2];
 
 	d[0] = c / 16;
 	d[1] = c % 16;
-	for (count = 0; count < 2; count++)
+	for (total = 0; total < 2; total++)
 	{
-		if (d[count] >= 10)
-			_putchar('0' + diff + d[count]);
+		if (d[total] >= 10)
+			_putchar('0' + diff + d[total]);
 		else
-			_putchar('0' + d[count]);
+			_putchar('0' + d[total]);
 	}
-	return (count);
+	return (total);
+}
+
+/**
+ * print_pointer - prints an address
+ * @args: the list of args
+ * Return: number of characters to print
+ */
+int print_pointer(va_list args)
+{
+	int total = 0;
+	unsigned int a[16];
+	unsigned int i, sum;
+	unsigned long n, m;
+	char *str = "(nil)";
+
+	n = va_arg(args, unsigned long);
+	if (n == 0)
+	{
+		for (i = 0; str[i]; i++)
+		{
+			_putchar(str[i]);
+			total++;
+		}
+		return (total);
+	}
+	_putchar('0');
+	_putchar('x');
+	total = 2;
+	m = _pow(16, 15);
+	a[0] = n / m;
+	for (i = 1; i < 16; i++)
+	{
+		m /= 16;
+		a[i] = (n / m) % 16;
+	}
+	for (i = 0, sum = 0; i < 16; i++)
+	{
+		sum += a[i];
+		if (sum || i == 15)
+		{
+			if (a[i] < 10)
+				_putchar('0' + a[i]);
+			else
+				_putchar('0' + ('a' - ':') + a[i]);
+			total++;
+		}
+	}
+	return (total);
 }
