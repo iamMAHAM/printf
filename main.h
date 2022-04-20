@@ -25,6 +25,11 @@ int print_pct(va_list args);
 int print_dec(va_list args);
 int print_nothing(const char *format, int i);
 int convert_binary(va_list args);
+int print_unsigned(va_list args);
+int print_octal(va_list args);
+int print_hex(unsigned int n, unsigned int c);
+int print_lhex(va_list args);
+int print_uhex(va_list args);
 
 
 #endif
