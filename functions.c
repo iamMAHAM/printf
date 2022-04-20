@@ -67,7 +67,7 @@ int print_nothing(const char *format, int i)
 /**
  * convert_binary - convert binary to decimal
  * @args: the list of args
- * @Return: the number of digit printed
+ * Return: the number of digit printed
  */
 int convert_binary(va_list args)
 {
