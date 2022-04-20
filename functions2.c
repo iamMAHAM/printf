@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "main.h"
 /**
  * print_S - prints a string and nonprintable character ascii values
  * @args: the list of args
@@ -20,7 +21,7 @@ int print_S(va_list args)
 			_putchar('\\');
 			_putchar('x');
 			total += 2;
-			total += hex_print(str[i]);
+			total += print_hex(str[i]);
 		}
 		else
 		{
