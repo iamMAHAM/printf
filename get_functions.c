@@ -20,6 +20,7 @@ int (*get_func(const char *format))(va_list)
 		{"x", print_lhex},
 		{"X", print_uhex},
 		{"S", print_S},
+		{"p", print_pointer},
 		{NULL, NULL}
 	};
 
