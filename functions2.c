@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <math.h>
 #include "main.h"
 /**
  * print_S - prints a string and nonprintable character ascii values
@@ -81,7 +82,7 @@ int print_pointer(va_list args)
 	_putchar('0');
 	_putchar('x');
 	total = 2;
-	m = _pow(16, 15);
+	m = pow(16, 15);
 	a[0] = n / m;
 	for (i = 1; i < 16; i++)
 	{
