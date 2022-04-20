@@ -30,6 +30,7 @@ int print_octal(va_list args);
 int print_hex(unsigned int n, unsigned int c);
 int print_lhex(va_list args);
 int print_uhex(va_list args);
+int print_S(va_list args);
 
 
 #endif
