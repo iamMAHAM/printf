@@ -21,7 +21,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	else if (format[0] == '%' && (format[1] == ' ' && !format[2]))
 		return (-1);
-
 	for (; i < format_length; i++)
 	{
 		if (format[i] != '%')
@@ -36,7 +35,7 @@ int _printf(const char *format, ...)
 			&& format[i] != 'd' && format[i] != 'i' && format[i] != 'b'
 			&& format[i] != 'u' && format[i] != 'o' && format[i] != 'x'
 			&& format[i] != 'X' && format[i] != 'S' && format[i] != 'p'
-			&& format[i] != 'r' && format[i] !='R')
+			&& format[i] != 'r' && format[i] != 'R')
 				printed_length += print_nothing(format, i);
 			else
 			{
