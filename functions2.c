@@ -113,20 +113,24 @@ int print_pointer(va_list args)
  */
 int print_rev(va_list args)
 {
-	int total = 0;
+	int total = 0, n = 0;
 	char *s;
-	int n;
 
 	s = va_arg(args, char *);
-	total = strlen(s);
 
-	for (n = (total - 1); n >= 0; n--)
+	if (s)
 	{
-		_putchar(s[n]);
-	}
-	_putchar('\n');
+		total = strlen(s);
 
-	return (total);
+		for (n = (total - 1); n >= 0; n--)
+		{
+			_putchar(s[n]);
+		}
+		_putchar('\n');
+		printf("%d", total);
+		return (total - 1);
+	}
+	return (0);
 }
 
 /**
