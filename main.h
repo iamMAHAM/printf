@@ -29,6 +29,9 @@ int print_dec(va_list args);
 /*get_functions.c*/
 int (*get_func(const char *format))(va_list);
 
+/*rot13.c*/
+int rot13(char *s);
+
 /*functions.c*/
 int print_char(va_list args);
 int print_str(va_list args);
@@ -47,5 +50,7 @@ int print_uhex(va_list args);
 int print_S(va_list args);
 int hex_print(char c);
 int print_pointer(va_list args);
+int print_rev(va_list args);
+int print_rot(va_list args);
 
 #endif
