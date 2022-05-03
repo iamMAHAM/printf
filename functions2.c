@@ -103,3 +103,48 @@ int print_pointer(va_list args)
 	}
 	return (total);
 }
+
+/**
+ * print_rev - a function that prints a string, in reverse.
+ * fcounter is to first count to end, n is to count back
+ * @args: string to reverse
+ * Return: string in reverse
+ */
+int print_rev(va_list args)
+{
+	int fcounter = 0;
+	char *s;
+	int i, n;
+
+	s = va_arg(args, char *);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		fcounter++;
+	}
+
+	for (n = (fcounter - 1); n >= 0; n--)
+	{
+		_putchar(s[n]);
+	}
+	_putchar('\n');
+
+	return (fcounter);
+}
+
+/**
+ * print_rot - Prints the rot13'ed string
+ * @args: String to encoded
+ *
+ * Return: Length of the string encoded
+ **/
+int print_rot(va_list args)
+{
+	char *p;
+	int p_len;
+
+	p = va_arg(args, char *);
+	p_len = rot13((p != NULL) ? p : "(ahyy)");
+
+	return (p_len);
+}
+
