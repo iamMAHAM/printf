@@ -115,7 +115,7 @@ int print_rev(va_list args)
 {
 	int total = 0;
 	char *s;
-	int i, n;
+	int n;
 
 	s = va_arg(args, char *);
 	total = strlen(s);
