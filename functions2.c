@@ -128,7 +128,7 @@ int print_rev(va_list args)
 		}
 		_putchar('\n');
 		printf("%d", total);
-		return (total - 1);
+		return (total);
 	}
 	return (0);
 }
