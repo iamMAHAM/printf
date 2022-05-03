@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include "main.h"
 /**
  * print_S - prints a string and nonprintable character ascii values
@@ -112,23 +113,20 @@ int print_pointer(va_list args)
  */
 int print_rev(va_list args)
 {
-	int fcounter = 0;
+	int total = 0;
 	char *s;
 	int i, n;
 
 	s = va_arg(args, char *);
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		fcounter++;
-	}
+	total = strlen(s);
 
-	for (n = (fcounter - 1); n >= 0; n--)
+	for (n = (total - 1); n >= 0; n--)
 	{
 		_putchar(s[n]);
 	}
 	_putchar('\n');
 
-	return (fcounter);
+	return (total);
 }
 
 /**
@@ -140,11 +138,10 @@ int print_rev(va_list args)
 int print_rot(va_list args)
 {
 	char *p;
-	int p_len;
+	int total = 0;
 
 	p = va_arg(args, char *);
-	p_len = rot13((p != NULL) ? p : "(ahyy)");
+	total = rot13((p != NULL) ? p : "(ahyy)");
 
-	return (p_len);
+	return (total);
 }
-
